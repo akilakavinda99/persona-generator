@@ -1,11 +1,7 @@
 import {
   AppBar,
   Avatar,
-  Badge,
-  Box,
   IconButton,
-  InputBase,
-  Menu,
   MenuItem,
   Popover,
   styled,
@@ -24,13 +20,14 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MenuIcon from "@mui/icons-material/Menu";
 import { headingFont } from "../styles/theme";
+import {
+  IconLogo,
+  Icons,
+  MenuItem1,
+  StyledToolbar,
+} from "../styles/componentStyles/navBarStyles";
 
 export const NavBar = () => {
-  const MenuItem1 = styled(MenuItem)({
-    root: {
-      justifyContent: "flex-end",
-    },
-  });
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -40,34 +37,6 @@ export const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const StyledToolbar = styled(Toolbar)({
-    display: "flex",
-    justifyContent: "space-between",
-  });
-  const Search = styled("div")({
-    backgroundColor: "white",
-    width: "40%",
-    borderRadius: "10px",
-    paddingLeft: "10px",
-  });
-  const IconLogo = styled("div")({
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-  });
-
-  const Icons = styled("div")({
-    display: "flex",
-    gap: "20px",
-    alignItems: "center",
-    cursor: "pointer",
-  });
-  const UserBox = styled("div")({
-    display: "flex",
-    gap: "5px",
-    alignItems: "center",
-    cursor: "pointer",
-  });
   return (
     <>
       <AppBar

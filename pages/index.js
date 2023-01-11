@@ -2,13 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import AlertBox from "../components/Alert";
+import ConnectionCheck from "../components/ConnectionCheck";
 import { NavBar } from "../components/NavBar";
 import NotSupported from "../components/NotSupported";
 import styles from "../styles/Home.module.css";
 var mobile = require("is-mobile");
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState();
+  const [windowWidth, setWindowWidth] = useState(1000);
   useEffect(() => {
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
@@ -19,19 +20,25 @@ export default function Home() {
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
-  });
+  }, [windowWidth]);
 
   var isMobile = mobile();
   return (
     <>
       <NavBar />
-      {isMobile || windowWidth < 1000 ? (
+      {isMobile ? (
+        <>
+          <NotSupported />
+        </>
+      ) : windowWidth < 1000 ? (
         <>
           <NotSupported />
         </>
       ) : (
         <>
-          <h1>{windowWidth}</h1>
+          <ConnectionCheck>
+            <h1>HElooooo</h1>
+          </ConnectionCheck>
         </>
       )}
     </>

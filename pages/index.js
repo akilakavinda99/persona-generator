@@ -209,7 +209,7 @@ export default function Home() {
                               .length == 0 ? (
                             <AlertBox
                               errorType="error"
-                              errorTitle="Ooooopsss"
+                              errorTitle="Oopsss"
                               errorMessage="Looks like you have entered an invalid description"
                             />
                           ) : (

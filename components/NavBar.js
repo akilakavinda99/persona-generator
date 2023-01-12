@@ -69,8 +69,23 @@ export const NavBar = () => {
             </Typography>
           </ThemeProvider>
           <Icons sx={{ display: { xs: "none", sm: "flex" } }}>
-            <GitHubIcon />
-            <LinkedInIcon />
+            <IconButton
+              color="secondary"
+              onClick={() =>
+                window.open(
+                  "https://github.com/akilakavinda99?tab=repositories",
+                  "_blank"
+                )
+              }
+            >
+              <GitHubIcon />
+            </IconButton>
+            <IconButton
+              color="primary"
+              onClick={() => window.open("https://www.google.com", "_blank")}
+            >
+              <LinkedInIcon />
+            </IconButton>
             <Tooltip title="Portfolio">
               <Avatar
                 sx={{ width: "40px", height: "40px" }}

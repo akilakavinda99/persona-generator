@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 const axios = require("axios");
-
+console.log("keyy", process.env.OPEN_AI_API_KEY);
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_API_KEY,
 });

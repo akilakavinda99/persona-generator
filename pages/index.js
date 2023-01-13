@@ -41,7 +41,7 @@ export default function Home() {
   const [img, setImage] = useState();
   const [selectedImg, setSelectedImg] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
-  console.log("this is the keeee", process.env.OPEN_AI_API_KEY);
+  console.log("this is the keeee", process.env.NEXT_PUBLIC_OPEN_AI_API_KEY);
 
   const selectImage = (image) => {
     if (img == "") {

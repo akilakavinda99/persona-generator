@@ -9,7 +9,7 @@ export default async function (req, res) {
     .createImage({
       prompt: `Generate portrait of ${req.body.image}. `,
       n: 2,
-      size: "1024x1024",
+      size: "512x512",
     })
     .then((genImage) => {
       console.log(genImage.data.data);

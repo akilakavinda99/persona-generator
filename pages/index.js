@@ -25,6 +25,7 @@ import { ParaStyled } from "../styles/componentStyles/paraStyles";
 import TitlebarImageList from "../components/ImageList";
 import Loading from "../components/Loading";
 var mobile = require("is-mobile");
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState(1000);
@@ -38,10 +39,11 @@ export default function Home() {
   const [hasError, setError] = useState(false);
   const [inputError, setInputError] = useState(false);
   const [imgURL, setImageURL] = useState([]);
-  const [img, setImage] = useState();
+  const [img, setImage] = useState("");
   const [selectedImg, setSelectedImg] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   console.log("this is the keeee", process.env.NEXT_PUBLIC_OPEN_AI_API_KEY);
+  const router = useRouter();
 
   const selectImage = (image) => {
     if (img == "") {
@@ -61,6 +63,7 @@ export default function Home() {
 
       console.log("Sdsdsd");
       setChecked((prev) => !prev);
+      setImage("");
       onSubmit(event);
     }
   };
@@ -80,6 +83,8 @@ export default function Home() {
   var isMobile = mobile();
 
   async function onSubmit(event) {
+    setImage("");
+    setImageLoading(true);
     setRegnerteText(animalInput);
     event.preventDefault();
     setLoading(true);
@@ -282,6 +287,19 @@ export default function Home() {
                   </ParaStyled>
                 </CenteredBox>
               </>
+            )}
+            {img != "" ? (
+              <GraidentButton
+                text="Generate Persona"
+                onClick={() => {
+                  router.push({
+                    pathname: "/persona",
+                    query: { words: result, img: img },
+                  });
+                }}
+              ></GraidentButton>
+            ) : (
+              <></>
             )}
           </ConnectionCheck>
         </>

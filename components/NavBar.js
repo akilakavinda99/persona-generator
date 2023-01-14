@@ -44,6 +44,7 @@ export const NavBar = () => {
         style={{
           background:
             "radial-gradient(circle, rgba(55,77,83,1) 35%, rgba(22,40,44,1) 100%, rgba(0,212,255,1) 100%)",
+          marginBottom: "30px",
 
           boxShadow: "none",
         }}

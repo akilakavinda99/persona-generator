@@ -13,6 +13,8 @@ export default function GraidentButton({ width, text, height, ...rest }) {
           borderRadius: "10px",
         },
         marginTop: "20px",
+        marginBottom: "20px",
+
         width: width,
         height: height,
       }}

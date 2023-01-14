@@ -22,6 +22,7 @@ export default function TitlebarImageList({ array, onClick, img }) {
               srcSet={`${item.url}?w=248&fit=crop&auto=format&dpr=2 2x`}
               alt={item.url}
               loading="lazy"
+              style={{ objectFit: "cover" }}
             />
             <ImageListItemBar
               title={img == item.url ? "Selected" : "Select"}

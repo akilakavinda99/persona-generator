@@ -39,9 +39,6 @@ export default function PersonaComp(props) {
             style={{
               width: "1000px",
               height: "600px",
-              // marginTop: "30px",
-              // marginBottom: "30px",
-
               backgroundColor: "#1a1a1a",
               borderRadius: "10px",
               display: "flex",
@@ -104,17 +101,6 @@ export default function PersonaComp(props) {
                 </div>
               </div>
             </div>
-            {/* <div
-            style={{
-              borderRadius: "10px",
-              overflow: "hidden",
-              position: "relative",
-              width: "300px",
-              height: "550px",
-              marginRight: "20px",
-              marginTop: "10px",
-            }}
-          > */}
             <img
               width="300px"
               height="550px"
@@ -126,7 +112,6 @@ export default function PersonaComp(props) {
               }}
               src={props.img}
             />
-            {/* </div> */}
           </div>{" "}
         </div>
       </CenteredBox>

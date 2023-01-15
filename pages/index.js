@@ -1,25 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import AlertBox from "../components/Alert";
 import ConnectionCheck from "../components/ConnectionCheck";
 import TextInput from "../components/Input";
 import { NavBar } from "../components/NavBar";
 import NotSupported from "../components/NotSupported";
-import styles from "../styles/Home.module.css";
 import { CenteredHeading } from "../styles/componentStyles/centeredHeading";
-import {
-  Box,
-  Button,
-  CircularProgress,
-  Slide,
-  ThemeProvider,
-} from "@mui/material";
+import { Box, Slide, ThemeProvider } from "@mui/material";
 import { headingFont } from "../styles/theme";
 import { GradientHeading } from "../styles/componentStyles/gradientHeading";
 import { CenteredBox } from "../styles/componentStyles/centeredBox";
 import GraidentButton from "../components/Button";
-import ListItems from "../components/ListItems";
 import { StyledListItem } from "../styles/componentStyles/listItemStyles";
 import { ParaStyled } from "../styles/componentStyles/paraStyles";
 import TitlebarImageList from "../components/ImageList";
@@ -40,9 +31,7 @@ export default function Home() {
   const [inputError, setInputError] = useState(false);
   const [imgURL, setImageURL] = useState([]);
   const [img, setImage] = useState("");
-  const [selectedImg, setSelectedImg] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
-  console.log("this is the keeee", process.env.NEXT_PUBLIC_OPEN_AI_API_KEY);
   const router = useRouter();
 
   const selectImage = (image) => {
@@ -101,12 +90,8 @@ export default function Home() {
     } else {
       setResult(data.result);
       setLoading(false);
-      console.log(data);
-      var results = result.filter((string) => string.includes("Name:"));
-      console.log(results);
       setAnimalInput("");
       var text = data.result[1] + data.result[2] + data.result[3];
-      console.log("this is text", text);
       autoImageGenrte(text);
     }
   }

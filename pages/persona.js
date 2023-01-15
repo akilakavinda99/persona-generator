@@ -6,8 +6,6 @@ import { GradientHeading } from "../styles/componentStyles/gradientHeading";
 
 export default function Persona() {
   const router = useRouter();
-  console.log("qeryyy", router.query.words);
-  console.log("dsd", router.query);
   if (router.query.words == undefined || router.query.img == undefined) {
     return (
       <AlertBox

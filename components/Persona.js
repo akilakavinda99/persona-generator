@@ -14,7 +14,6 @@ export default function PersonaComp(props) {
   const handleDownloadImage = async () => {
     setDownloadLoading(true);
     const element = ref.current;
-    console.log("refff", ref.current);
     const canvas = await html2canvas(element, {
       proxy: "https://html2canvas-proxy-host.vercel.app/?",
       // backgroundColor: "none",

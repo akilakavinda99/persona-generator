@@ -1,20 +1,13 @@
+import React from "react";
 import {
   AppBar,
   Avatar,
   IconButton,
-  MenuItem,
   Popover,
-  styled,
   ThemeProvider,
-  Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
-import React from "react";
-import InterestsIcon from "@mui/icons-material/Interests";
-import MailIcon from "@mui/icons-material/Mail";
-import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
-import { style } from "@mui/system";
 import BadgeIcon from "@mui/icons-material/Badge";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
